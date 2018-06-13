@@ -11,9 +11,9 @@ namespace ConsoleAppMoviesAndTvShows
     {
         static void Main(string[] args)
         {
-            string serviceName = "ronansearch";
+            string serviceName = "[YOUR SEARCH SERVICE NAME]";
 
-            string apiKey = "9F8C56B5CEA74F64ECC2477D467AAF97";
+            string apiKey = "[YOUR API KEY]";
 
             SearchServiceClient serviceClientApi = Helper.Initialize(serviceName, apiKey);
             ISearchIndexClient indexClientApi = serviceClientApi.Indexes.GetClient(Helper.IndexName);
