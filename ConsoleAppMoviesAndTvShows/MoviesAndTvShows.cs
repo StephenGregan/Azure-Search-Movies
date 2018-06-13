@@ -16,10 +16,11 @@ namespace ConsoleAppMoviesAndTvShows
         public DateTimeOffset ReleaseDate { get; set; }
         public string RunLength { get; set; }
         public double? UserRating { get; set; }
+        public string Type { get; set; }
 
         public override string ToString()
         {
-            return $"Id: {Id}\nName: {Name}\nCategory: {Category}\nDescription: {Description}\nRelease Date: {ReleaseDate}\nRun Length: {RunLength}\nUser Rating: {UserRating}\n";
+            return $"Id: {Id}\nName: {Name}\nCategory: {Category}\nDescription: {Description}\nRelease Date: {ReleaseDate}\nRun Length: {RunLength}\nUser Rating: {UserRating}\nType : {Type}";
         }
     }
 }

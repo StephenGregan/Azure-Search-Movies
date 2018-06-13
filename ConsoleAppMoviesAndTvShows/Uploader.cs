@@ -25,6 +25,7 @@ namespace ConsoleAppMoviesAndTvShows
                 ReleaseDate = new DateTimeOffset(2001, 12, 19, 0, 0, 0, TimeSpan.Zero),
                 RunLength = "2.58",
                 UserRating = 9.5,
+                Type = "Movie",
 
             };
 
@@ -37,6 +38,7 @@ namespace ConsoleAppMoviesAndTvShows
                 ReleaseDate = new DateTimeOffset(2018, 1, 26, 0, 0, 0, TimeSpan.Zero),
                 RunLength = "2.32",
                 UserRating = 7.5,
+                Type = "Movie",
 
             };
 
@@ -49,6 +51,7 @@ namespace ConsoleAppMoviesAndTvShows
                 ReleaseDate = new DateTimeOffset(2014, 7, 13, 0, 0, 0, TimeSpan.Zero),
                 RunLength = "3.33",
                 UserRating = 8.1,
+                Type = "Movie",
 
             };
 
@@ -61,13 +64,71 @@ namespace ConsoleAppMoviesAndTvShows
                 ReleaseDate = new DateTimeOffset(2015, 1, 20, 0, 0, 0, TimeSpan.Zero),
                 RunLength = "2.22",
                 UserRating = 8.9,
+                Type = "Movie",
 
             };
 
+            MoviesAndTvShows t1 = new MoviesAndTvShows
+            {
+                Id = "5",
+                Name = "Game Of Thrones",
+                Category = "Fantasy",
+                Description = "",
+                ReleaseDate = new DateTimeOffset(2015, 1, 20, 0, 0, 0, TimeSpan.Zero),
+                RunLength = "1.00",
+                UserRating = 9.9,
+                Type = "TvShow",
+
+            };
+
+            MoviesAndTvShows t2 = new MoviesAndTvShows
+            {
+                Id = "6",
+                Name = "Lost",
+                Category = "Mystery",
+                Description = "",
+                ReleaseDate = new DateTimeOffset(2015, 1, 20, 0, 0, 0, TimeSpan.Zero),
+                RunLength = "55.0",
+                UserRating = 10,
+                Type = "TvShow",
+
+            };
+
+            MoviesAndTvShows t3 = new MoviesAndTvShows
+            {
+                Id = "7",
+                Name = "The Walking Dead",
+                Category = "Horror",
+                Description = "",
+                ReleaseDate = new DateTimeOffset(2015, 1, 20, 0, 0, 0, TimeSpan.Zero),
+                RunLength = "52.0",
+                UserRating = 8.7,
+                Type = "TvShow",
+
+            };
+
+            MoviesAndTvShows t4 = new MoviesAndTvShows
+            {
+                Id = "8",
+                Name = "The Simpsons",
+                Category = "Comedy",
+                Description = "",
+                ReleaseDate = new DateTimeOffset(2015, 1, 20, 0, 0, 0, TimeSpan.Zero),
+                RunLength = "30.0",
+                UserRating = 5.6,
+                Type = "TvShow",
+
+            };
             moviesAndTvShowsDocuments.Add(m1);
             moviesAndTvShowsDocuments.Add(m2);
             moviesAndTvShowsDocuments.Add(m3);
             moviesAndTvShowsDocuments.Add(m4);
+
+            moviesAndTvShowsDocuments.Add(t1);
+            moviesAndTvShowsDocuments.Add(t2);
+            moviesAndTvShowsDocuments.Add(t3);
+            moviesAndTvShowsDocuments.Add(t4);
+
 
             return moviesAndTvShowsDocuments;
 

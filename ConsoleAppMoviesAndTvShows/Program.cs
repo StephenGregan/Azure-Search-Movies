@@ -11,9 +11,9 @@ namespace ConsoleAppMoviesAndTvShows
     {
         static void Main(string[] args)
         {
-            string serviceName = "";
+            string serviceName = "ronansearch";
 
-            string apiKey = "";
+            string apiKey = "9F8C56B5CEA74F64ECC2477D467AAF97";
 
             SearchServiceClient serviceClientApi = Helper.Initialize(serviceName, apiKey);
             ISearchIndexClient indexClientApi = serviceClientApi.Indexes.GetClient(Helper.IndexName);
@@ -24,15 +24,30 @@ namespace ConsoleAppMoviesAndTvShows
             Searcher searcher = new Searcher();
 
             Console.WriteLine("Search by name....\n");
-            searcher.SearchDocuments(indexClientApi, "Maze Runner : The Death Cure");
+            searcher.SearchDocuments(indexClientApi,"*", "Name eq 'Maze Runner : The Death Cure'");
             Console.WriteLine(string.Empty);
 
             Console.WriteLine("Search category for fantasy movies....\n");
-            searcher.SearchDocuments(indexClientApi, "*", "Category eq 'Thriller'");
+            searcher.SearchDocuments(indexClientApi, "*", "Category eq 'Fantasy' and Type eq 'Movie'");
             Console.WriteLine(string.Empty);
 
-            Console.WriteLine("Search for movies with a rating of 8.0 and over.......\n");
-            searcher.SearchDocuments(indexClientApi, "*", "UserRating gt 8.0");
+            Console.WriteLine("Search for movies with a rating of 9.0 and over.......\n");
+            searcher.SearchDocuments(indexClientApi, "*", "UserRating gt 9.0");
+            Console.WriteLine(string.Empty);
+
+            Console.WriteLine("Search for movies with a run time of 2.31 or less.....\n");
+            searcher.SearchDocuments(indexClientApi, "*", "RunLength lt '2.32' and UserRating lt 9.0");
+            Console.WriteLine(string.Empty);
+
+            Console.WriteLine("Show all movies.....");
+            searcher.SearchDocuments(indexClientApi, "*", "Type eq 'Movie'");
+            Console.WriteLine(string.Empty);
+
+
+            Console.WriteLine("Show all tv shows.....");
+            searcher.SearchDocuments(indexClientApi, "*", "Type eq 'TvShow' and Category ne 'Comedy'");
+            Console.WriteLine(string.Empty);
+
 
             //Console.WriteLine("Begin searching by ..... facet\n");
             List<string> facets = new List<string>();

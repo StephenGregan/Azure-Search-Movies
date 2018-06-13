@@ -10,7 +10,7 @@ namespace ConsoleAppMoviesAndTvShows
 {
     public class Helper
     {
-        public const string IndexName = "moviesandtvshows";
+        public const string IndexName = "moviesindex";
 
         public static SearchServiceClient Initialize(string serviceName, string apiKey)
         {
@@ -29,12 +29,13 @@ namespace ConsoleAppMoviesAndTvShows
                 Fields = new[]
                 {
                     new Field("Id", DataType.String)                        { IsKey = true },
-                    new Field("Name", DataType.String)                      { IsSearchable = true, IsFacetable = true, IsRetrievable = true, IsSortable = true, IsFilterable = true},
-                    new Field("Category", DataType.String)                  { IsSearchable = true, IsFacetable = true, IsRetrievable = true, IsSortable = true, IsFilterable = true},
-                    new Field("Description", DataType.String)               { IsSearchable = true, IsFacetable = true, IsRetrievable = true, IsSortable = true, IsFilterable = true},
-                    new Field("ReleaseDate", DataType.DateTimeOffset)       { IsFacetable = true, IsRetrievable = true, IsSortable = true, IsFilterable = true},
-                    new Field("RunLength", DataType.String)                 { IsSearchable = true, IsFacetable = true, IsRetrievable = true, IsSortable = true, IsFilterable = true},
-                     new Field("UserRating", DataType.Double)               { IsFacetable = true, IsRetrievable = true, IsSortable = true, IsFilterable = true},
+                    new Field("Name", DataType.String)                      { IsKey = false, IsSearchable = true, IsFacetable = true, IsRetrievable = true, IsSortable = true, IsFilterable = true},
+                    new Field("Category", DataType.String)                  { IsKey = false, IsSearchable = true, IsFacetable = true, IsRetrievable = true, IsSortable = true, IsFilterable = true},
+                    new Field("Description", DataType.String)               { IsKey = false, IsSearchable = true, IsFacetable = true, IsRetrievable = true, IsSortable = true, IsFilterable = true},
+                    new Field("ReleaseDate", DataType.DateTimeOffset)       { IsKey = false, IsSearchable = false, IsFacetable = true, IsRetrievable = true, IsSortable = true, IsFilterable = true},
+                    new Field("RunLength", DataType.String)                 { IsKey = false, IsSearchable = true, IsFacetable = true, IsRetrievable = true, IsSortable = true, IsFilterable = true},
+                    new Field("UserRating", DataType.Double)                { IsKey = false, IsSearchable = false, IsFacetable = true, IsRetrievable = true, IsSortable = true, IsFilterable = true},
+                    new Field("Type", DataType.String)                      { IsKey = false, IsSearchable = true, IsFacetable = true, IsRetrievable = true, IsSortable = true, IsFilterable = true},
 
                 }
             };
