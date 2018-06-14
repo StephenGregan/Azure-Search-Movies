@@ -11,9 +11,9 @@ namespace ConsoleAppMoviesAndTvShows
     {
         static void Main(string[] args)
         {
-            string serviceName = "[YOUR SEARCH SERVICE NAME]";
+            string serviceName = "[SEARCH SERVICE NAME]";
 
-            string apiKey = "[YOUR API KEY]";
+            string apiKey = "[API KEY]";
 
             SearchServiceClient serviceClientApi = Helper.Initialize(serviceName, apiKey);
             ISearchIndexClient indexClientApi = serviceClientApi.Indexes.GetClient(Helper.IndexName);
